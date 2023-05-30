@@ -36,7 +36,7 @@ export default class UsuarioValidator {
             }
 
             const cpf = await Usuario.findOne({ 
-                where: { cpf: dadosUsuarioBody.cpf, codEmpresa: userLogado.Empresa.codEmpresa}
+                where: { cpf: dadosUsuarioBody.cpf}
             });
 
             if(cpf) {
@@ -49,7 +49,7 @@ export default class UsuarioValidator {
             }
 
             const email = await Usuario.findOne({ 
-                where: { cpf: dadosUsuarioBody.email, codEmpresa: userLogado.Empresa.codEmpresa}
+                where: { cpf: dadosUsuarioBody.email}
             });
 
             if(email) {
@@ -96,7 +96,6 @@ export default class UsuarioValidator {
                 const cpf = await Usuario.findOne({ where: {
                     cpf: dadosUsuarioBody.cpf,
                     codUsuario: { [Op.ne ]: usuario.dataValues.codUsuario},
-                    codEmpresa: userLogado.Empresa.codEmpresa
                 }});
     
                 if(cpf) {
@@ -106,9 +105,7 @@ export default class UsuarioValidator {
 
             if(dadosUsuarioBody.email){
                 const email = await Usuario.findOne({ where: {
-                    email: dadosUsuarioBody.email,
-                    codUsuario: { [Op.ne ]: usuario.dataValues.codUsuario},
-                    codEmpresa: userLogado.Empresa.codEmpresa
+                    email: dadosUsuarioBody.email
                 }});
     
                 if(email) {

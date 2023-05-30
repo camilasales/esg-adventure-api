@@ -4,6 +4,7 @@ import UsuarioController from '../controllers/UsuarioController';
 import EmpresaController from '../controllers/EmpresaController';
 
 import UsuarioValidator from "../validators/UsuarioValidator";
+import EmpresaValidator from "../validators/EmpresaValidator";
 
 import authMiddleware from '../middlewares/auth.middleware';
 
@@ -34,6 +35,8 @@ export class Routes {
 
         //Empresa
         const empresaController = new EmpresaController();
+        const empresaValidator = new EmpresaValidator();
+        app.post("/empresa", [empresaValidator.validarEmpresaCadastrar], empresaController.cadastrarEmpresa);
         app.get("/empresa/:codEmpresa", empresaController.verEmpresa);
     }
 }
