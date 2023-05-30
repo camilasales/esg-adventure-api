@@ -1,0 +1,7 @@
+node_modules
+yarn.lock
+.env
+tmp
+logs
+temp
+package-lock.json
