@@ -10,7 +10,7 @@ const password = environments.db_password;
 export const sequelize = new Sequelize(db, username, password, {
     dialect: 'postgres',
     host: environments.db_host,
-    port: environments.db_port ? parseInt(environments.db_port) : 3306,
+    port: environments.db_port ? parseInt(environments.db_port) : 5432,
     dialectOptions: {
         useUTC: false,
     },
