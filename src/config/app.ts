@@ -1,7 +1,5 @@
 import express from 'express';
-import compression from 'compression';
 import cors from 'cors';
-import helmet from 'helmet';
 import { Routes } from '../routes/routes';
 
 import { logs } from '../middlewares/logs.middleware';
@@ -26,24 +24,9 @@ class App {
     }
 
     private config(): void {
-        this.app.use(
-            express.json({
-                limit: '10mb',
-            })
-        );
-        this.app.use(
-            express.urlencoded({
-                limit: '10mb',
-                extended: false,
-            })
-        );
-        
         let secret: any = environments.jwt_secret;
         this.app.use(session({ secret: secret }));
-
-        this.app.use(compression());
         this.app.use(cors());
-        this.app.use(helmet());
     }
 
     private middlewares(): void {
