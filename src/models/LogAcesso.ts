@@ -17,7 +17,7 @@ export interface LogAcessoInterface {
 
 LogAcesso.init({
     codLogAcesso: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },

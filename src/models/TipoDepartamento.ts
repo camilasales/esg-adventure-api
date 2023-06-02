@@ -16,7 +16,7 @@ export interface TipoDepartamentoInterface {
 
 TipoDepartamento.init({
     codTipoDepartamento: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },

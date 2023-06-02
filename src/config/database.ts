@@ -2,12 +2,13 @@ import { Log } from "../helpers/LogsHelper";
 import { Sequelize } from "sequelize";
 import { environments } from './environments';
 
+
 const db = environments.db_name ? environments.db_name : '';
 const username = environments.db_username ? environments.db_username : '';
 const password = environments.db_password;
 
 export const sequelize = new Sequelize(db, username, password, {
-    dialect: 'mysql',
+    dialect: 'postgres',
     host: environments.db_host,
     port: environments.db_port ? parseInt(environments.db_port) : 3306,
     dialectOptions: {

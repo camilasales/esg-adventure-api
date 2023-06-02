@@ -16,7 +16,7 @@ export interface TipoPerfilInterface {
 
 TipoPerfil.init({
     codTipoPerfil: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },

@@ -37,20 +37,20 @@ export interface UsuarioInterface {
 
 Usuario.init({
     codUsuario: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },
     codEmpresa: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         allowNull: false,
     },
     codTipoDepartamento: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         allowNull: false,
     },
     codTipoPerfil: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         allowNull: false,
     },
     nome: {

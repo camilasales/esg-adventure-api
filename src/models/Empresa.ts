@@ -23,7 +23,7 @@ export interface EmpresaInterface {
 
 Empresa.init({
     codEmpresa: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },
